@@ -32,7 +32,7 @@ function findBiggestNumber(map) {
     // console.log(arrayOfLargests)
   }
   arrayOfLargests.sort((a, b) => b - a)
-  console.log("array of largest", arrayOfLargests)
+  // console.log("array of largest", arrayOfLargests)
   // for (let j = 0; j < arrayOfLargests.length; j++) {
   //   if (max < arrayOfLargests[j]) {
   //     max = arrayOfLargests[j]
@@ -105,10 +105,12 @@ function balancedString(str) {
 
   for (const character in freq) {
     myArr.push(freq[character])
-    console.log(`${character}: ${freq[character]}`);
+    // console.log(`${character}: ${freq[character]}`);
   }
   let sample = myArr[0]
-  let check = (myArr) => myArr.every(item => item === sample);
+  // let check = (myArr) => myArr.every(item => item === sample);
+  let check = myArr.every(item => item === sample);
+  // console.log(check);
   if (check) {
     // console.log("true")
     return (true);
@@ -146,7 +148,7 @@ function additivePersistence(num) {
     loopCount++;
   }
 
-  console.log(loopCount)
+  // console.log(loopCount)
   // return loopCount;
   // // for loop through the array of string digits
   // for(let i=0; i< myStrArr.length ; i++){
@@ -155,6 +157,7 @@ function additivePersistence(num) {
   // }
   // while(!(finalSum < 10 && finalSum >=0 )){
   // }
+  return(loopCount)
 }
 
 
@@ -188,11 +191,11 @@ const grid5 = [
   [],
 ]
 
-// console.assert(findBiggestNumber(grid1) === 12, "biggest number should be 12");
-// console.assert(findBiggestNumber(grid2) === 6, "biggest number should be 6");
-// console.assert(findBiggestNumber(grid3) === 2, "biggest number should be 2");
-// console.assert(findBiggestNumber(grid4) === 0, "biggest number should be 0");
-// console.assert(findBiggestNumber(grid5) === undefined, "biggest number response should be undefined");
+console.assert(findBiggestNumber(grid1) === 12, "biggest number should be 12");
+console.assert(findBiggestNumber(grid2) === 6, "biggest number should be 6");
+console.assert(findBiggestNumber(grid3) === 2, "biggest number should be 2");
+console.assert(findBiggestNumber(grid4) === 0, "biggest number should be 0");
+console.assert(findBiggestNumber(grid5) === undefined, "biggest number response should be undefined");
 
 
 // // TEST 2 - balancedString
@@ -208,10 +211,10 @@ console.assert(balancedString("") === true, "'' is balanced")
 
 
 // // TEST 3 - additivePersistence
-// console.assert(additivePersistence(1234) === 2, 'the additive 1234 should be 2')
-// console.assert(additivePersistence(13) === 1, 'the additive 13 should be 1')
-// console.assert(additivePersistence(9876) === 2, 'the additive 9876 should be 2')
-// console.assert(additivePersistence(199) === 3, 'the additive 199 should be 3')
-// console.assert(additivePersistence(1679583) === 3, 'the additive 1679583 should be 3')
+console.assert(additivePersistence(1234) === 2, 'the additive 1234 should be 2')
+console.assert(additivePersistence(13) === 1, 'the additive 13 should be 1')
+console.assert(additivePersistence(9876) === 2, 'the additive 9876 should be 2')
+console.assert(additivePersistence(199) === 3, 'the additive 199 should be 3')
+console.assert(additivePersistence(1679583) === 3, 'the additive 1679583 should be 3')
 
 // console.log("code execution complete!")
