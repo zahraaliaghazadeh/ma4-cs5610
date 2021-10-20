@@ -1,4 +1,4 @@
-// PUT YOUR NAME HERE
+// Author: Zahra Ali Aghazadeh (Yalda)
 // PROBLEM 1 - findBiggestNumber
 
 /*
@@ -13,37 +13,28 @@
 
 */
 function findBiggestNumber(map) {
+
+  const INDEX_OF_SECOND_ITEM = 1;
   // to check if array is empty or undefined
   if (map === undefined || map.length === 0) {
-    // console.log(undefined)
     return undefined
   }
-  // let max_length = map[0].length // inititalize max as first array
-  let arrayOfLargests = [] // initialize an array for all the largests
-  let max = map[0][0];
-  //  for loop through each array within
+  // initialize an array for all the largests
+  let arrayOfLargests = [] 
+  //  for loop through each array within the map array
   for (let i = 0; i < map.length; i++) {
     if (map[i] === undefined) {
-      // console.log(undefined)
       return undefined
     }
     // arrow function to sort in descending order
     arrayOfLargests[i] = map[i].sort((a, b) => b - a)[0]
-    // console.log(arrayOfLargests)
   }
+  // Sorting the array of largest
   arrayOfLargests.sort((a, b) => b - a)
-  // console.log("array of largest", arrayOfLargests)
-  // for (let j = 0; j < arrayOfLargests.length; j++) {
-  //   if (max < arrayOfLargests[j]) {
-  //     max = arrayOfLargests[j]
-  //   }
-  // }
+  // note: there wont be duplicates in the arrayOfLargest array
   if (arrayOfLargests[0] === null) {
-    // console.log(arrayOfLargests[1])
-    return (arrayOfLargests[1])
+    return (arrayOfLargests[INDEX_OF_SECOND_ITEM])
   }
-  // console.log("max is: ", max)
-  // console.log(arrayOfLargests[0])
   return (arrayOfLargests[0]);
 }
 
@@ -65,15 +56,7 @@ function findBiggestNumber(map) {
 
 function balancedString(str) {
   // let myArr = str.split("")
-  // console.log(myArr)
   // let mySet = new Set(myArr)
-  // console.log(mySet)
-
-  // for(let i=0; i<mySet.size; i++){
-  //   let temp = mySet.values().next().value
-
-  // }
-
 
   // let count = 0;
   // let myObj = {};
@@ -109,13 +92,11 @@ function balancedString(str) {
   }
   let sample = myArr[0]
   // let check = (myArr) => myArr.every(item => item === sample);
+  // using the every method to check within object
   let check = myArr.every(item => item === sample);
-  // console.log(check);
   if (check) {
-    // console.log("true")
     return (true);
   } else {
-    // console.log("false")
     return (false);
   }
 
@@ -139,7 +120,7 @@ function additivePersistence(num) {
   let myStr = num.toString() // the string of num - "1234"
   let myStrArr = myStr.split("") // the array of string digits - ["1"."2","3","4"]
   let loopCount = 0;
-  let finalSum = 0;
+  // let finalSum = 0;
 
   while (myStrArr.length > 1) {
     myStrArr = String(myStrArr.reduce(function (a, b) {
@@ -148,8 +129,6 @@ function additivePersistence(num) {
     loopCount++;
   }
 
-  // console.log(loopCount)
-  // return loopCount;
   // // for loop through the array of string digits
   // for(let i=0; i< myStrArr.length ; i++){
   //   finalSum += parseInt(myStrArr[i]) // 0 + 1 + 2 + 3 + 4
